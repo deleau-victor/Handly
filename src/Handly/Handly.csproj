@@ -16,7 +16,7 @@
 	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <Deterministic>true</Deterministic>
-	<PackageIcon>gradient_128x128.png</PackageIcon>
+	<PackageIcon>128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
