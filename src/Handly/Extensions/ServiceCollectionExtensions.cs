@@ -1,10 +1,7 @@
-using Handly.Configuration;
-using Handly.Interfaces;
-using Handly.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace Handly.Extensions;
+namespace Handly;
 
 public static class ServiceCollectionExtensions
 {
@@ -20,7 +17,9 @@ public static class ServiceCollectionExtensions
 
 		AddScanResults(services, config);
 		AddBehaviours(services, config);
+
 		services.TryAddTransient<IDispatcher, Dispatcher>();
+
 		return services;
 	}
 

@@ -1,8 +1,6 @@
-using Handly.Configuration;
-using Handly.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Handly.Extensions;
+namespace Handly;
 
 public static class HandlyDispatcherConfigExtensions
 {

@@ -1,3 +1,3 @@
-namespace Handly.Interfaces;
+namespace Handly;
 
 public interface IRequest<TResponse> { }

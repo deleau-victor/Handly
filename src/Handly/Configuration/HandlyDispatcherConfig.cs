@@ -1,13 +1,13 @@
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Handly.Configuration;
+namespace Handly;
 
 public class HandlyDispatcherConfig
 {
 	public ServiceLifetime Lifetime { get; set; } = ServiceLifetime.Transient;
-	internal List<Assembly> Assemblies { get; } = new();
-	internal List<ServiceDescriptor> Behaviours { get; } = new();
+	internal List<Assembly> Assemblies { get; } = [];
+	internal List<ServiceDescriptor> Behaviours { get; } = [];
 
 	public HandlyDispatcherConfig RegisterHandlerFromAssembly(Assembly assembly)
 	{

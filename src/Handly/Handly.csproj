@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <PackageId>Handly</PackageId>
-    <Version>1.0.0-icon</Version>
+    <Version>1.0.1</Version>
     <Authors>Deleau Victor</Authors>
     <Company>CoreSync Solutions</Company>
     <Description>Lightweight CQRS/Mediator handler dispatcher with pipelines and DI-friendly behaviors.</Description>
@@ -32,9 +32,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.4" />
   </ItemGroup>
-
-
-
 
 </Project>
