@@ -12,8 +12,8 @@ public class MediatRPingHandler : MediatR.IRequestHandler<MediatRPing, string>
 public class HandlyPing : Handly.IRequest<string> { }
 public class HandlyPingHandler : Handly.IRequestHandler<HandlyPing, string>
 {
-	public ValueTask<string> Handle(HandlyPing request, CancellationToken cancellationToken)
+	public Task<string> Handle(HandlyPing request, CancellationToken cancellationToken)
 	{
-		return new("Pong");
+		return Task.FromResult("Pong");
 	}
 }

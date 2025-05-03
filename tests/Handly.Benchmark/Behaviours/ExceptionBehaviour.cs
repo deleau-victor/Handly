@@ -3,7 +3,7 @@ namespace BenchmarkTests.Behaviours;
 public class HandlyExceptionBehaviour<TRequest, TResponse> : Handly.IPipelineBehavior<TRequest, TResponse>
 	where TRequest : Handly.IRequest<TResponse>
 {
-	public async ValueTask<TResponse> Handle(TRequest request, Handly.RequestHandlerDelegate<TRequest, TResponse> next, CancellationToken cancellationToken)
+	public async Task<TResponse> Handle(TRequest request, Handly.RequestHandlerDelegate<TRequest, TResponse> next, CancellationToken cancellationToken)
 	{
 		try
 		{ return await next(); }

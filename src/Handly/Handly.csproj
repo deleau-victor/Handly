@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <PackageId>Handly</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Deleau Victor</Authors>
     <Company>CoreSync Solutions</Company>
     <Description>Lightweight CQRS/Mediator handler dispatcher with pipelines and DI-friendly behaviors.</Description>

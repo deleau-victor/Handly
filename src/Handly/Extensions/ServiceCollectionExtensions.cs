@@ -30,16 +30,16 @@ public static class ServiceCollectionExtensions
 		foreach (var assembly in config.Assemblies)
 		{
 			var handlers = assembly.GetTypes()
-			   .Where(t => t.IsClass && !t.IsAbstract && t.IsPublic)
-			   .SelectMany(t => t.GetInterfaces(), (t, i) => new { HandlerType = t, InterfaceType = i })
-			   .Where(x => x.InterfaceType.IsGenericType && x.InterfaceType.GetGenericTypeDefinition() == typeof(IRequestHandler<,>))
+			   .Where(t => t.IsClass && !t.IsAbstract)
+			   .SelectMany(t => t.GetInterfaces(), (t, i) => new { Implementation = t, Interface = i })
+			   .Where(x => x.Interface.IsGenericType && x.Interface.GetGenericTypeDefinition() == typeof(IRequestHandler<,>))
 			   .ToList();
 
 			foreach (var handler in handlers)
 			{
-				Type handlerInterface = handler.InterfaceType;
-				Type handlerType = handler.HandlerType;
-				var serviceDescriptor = ServiceDescriptor.Describe(handlerInterface, handlerType, config.Lifetime);
+				Type handlerInterface = handler.Interface;
+				Type handlerImplementation = handler.Implementation;
+				var serviceDescriptor = ServiceDescriptor.Describe(handlerInterface, handlerImplementation, config.Lifetime);
 				services.Add(serviceDescriptor);
 			}
 		}

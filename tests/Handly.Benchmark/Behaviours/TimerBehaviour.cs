@@ -3,7 +3,7 @@ namespace BenchmarkTests.Behaviours;
 public class HandlyTimerBehaviour<TRequest, TResponse> : Handly.IPipelineBehavior<TRequest, TResponse>
 	where TRequest : Handly.IRequest<TResponse>
 {
-	public async ValueTask<TResponse> Handle(TRequest request, Handly.RequestHandlerDelegate<TRequest, TResponse> next, CancellationToken cancellationToken)
+	public async Task<TResponse> Handle(TRequest request, Handly.RequestHandlerDelegate<TRequest, TResponse> next, CancellationToken cancellationToken)
 	{
 		var sw = System.Diagnostics.Stopwatch.StartNew();
 		var response = await next();

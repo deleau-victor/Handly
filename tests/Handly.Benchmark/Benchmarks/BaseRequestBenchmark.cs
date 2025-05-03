@@ -61,7 +61,7 @@ public class BaseRequestBenchmark
 		=> _mediator.Send(new MediatRPing());
 
 	[Benchmark]
-	public ValueTask<string> Handly_Dispatch_WithoutBehaviors()
+	public Task<string> Handly_Dispatch_WithoutBehaviors()
 		=> _dispatcher.Dispatch(new HandlyPing());
 
 	[Benchmark]
@@ -69,6 +69,6 @@ public class BaseRequestBenchmark
 		=> _mediatorWithBehaviours.Send(new MediatRPing());
 
 	[Benchmark]
-	public ValueTask<string> Handly_Dispatch_WithBehaviors()
+	public Task<string> Handly_Dispatch_WithBehaviors()
 		=> _dispatcherWithBehaviours.Dispatch(new HandlyPing());
 }

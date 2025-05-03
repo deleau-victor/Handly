@@ -5,7 +5,7 @@ public class TrackingBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest
 {
 	public static bool Called = false;
 
-	public ValueTask<TResponse> Handle(
+	public Task<TResponse> Handle(
 		TRequest request,
 		RequestHandlerDelegate<TRequest, TResponse> next,
 		CancellationToken cancellationToken)
